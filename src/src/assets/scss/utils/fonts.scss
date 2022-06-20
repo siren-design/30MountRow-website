@@ -1,0 +1,69 @@
+@import 'mixins';
+
+@font-face {
+  font-weight: 400;
+  font-family: 'SuisseWorks';
+  src: url('../../assets/fonts/SuisseWorks.eot');
+  src: url('../../assets/fonts/SuisseWorks.eot?#iefix')
+  format('embedded-opentype'), url('../../assets/fonts/SuisseWorks.woff')
+  format('woff'), url('../../assets/fonts/SuisseWorks.ttf')
+  format('truetype'), url('../../assets/fonts/SuisseWorks.svg')
+  format('svg');
+}
+
+@font-face {
+  font-weight: 700;
+  font-family: 'SuisseWorks';
+  src: url('../../assets/fonts/SuisseWorks-Bold.eot');
+  src: url('../../assets/fonts/SuisseWorks-Bold.eot?#iefix')
+  format('embedded-opentype'), url('../../assets/fonts/SuisseWorks-Bold.woff')
+  format('woff'), url('../../assets/fonts/SuisseWorks-Bold.ttf')
+  format('truetype'), url('../../assets/fonts/SuisseWorks-Bold.svg')
+  format('svg');
+}
+
+@font-face {
+  font-weight: 400;
+  font-style: italic;
+  font-family: 'SuisseWorks';
+  src: url('../../assets/fonts/SuisseWorks-Italic.eot');
+  src: url('../../assets/fonts/SuisseWorks-Italic.eot?#iefix')
+  format('embedded-opentype'), url('../../assets/fonts/SuisseWorks-Italic.woff')
+  format('woff'), url('../../assets/fonts/SuisseWorks-Italic.ttf')
+  format('truetype'), url('../../assets/fonts/SuisseWorks-Italic.svg')
+  format('svg');
+}
+
+@font-face {
+  font-weight: 400;
+  font-family: 'SuisseBPIntl';
+  src: url('../../assets/fonts/SuisseBPIntl-Regular.eot');
+  src: url('../../assets/fonts/SuisseBPIntl-Regular.eot?#iefix')
+  format('embedded-opentype'), url('../../assets/fonts/SuisseBPIntl-Regular.woff')
+  format('woff'), url('../../assets/fonts/SuisseBPIntl-Regular.ttf')
+  format('truetype'), url('../../assets/fonts/SuisseBPIntl-Regular.svg')
+  format('svg');
+}
+
+@font-face {
+  font-weight: 700;
+  font-family: 'SuisseBPIntl';
+  src: url('../../assets/fonts/SuisseBPIntl-Bold.eot');
+  src: url('../../assets/fonts/SuisseBPIntl-Bold.eot?#iefix')
+  format('embedded-opentype'), url('../../assets/fonts/SuisseBPIntl-Bold.woff')
+  format('woff'), url('../../assets/fonts/SuisseBPIntl-Bold.ttf')
+  format('truetype'), url('../../assets/fonts/SuisseBPIntl-Bold.svg')
+  format('svg');
+}
+
+@font-face {
+  font-weight: 300;
+  font-family: 'SuisseBPIntl';
+  src: url('../../assets/fonts/SuisseBPIntl-Light.eot');
+  src: url('../../assets/fonts/SuisseBPIntl-Light.eot?#iefix')
+  format('embedded-opentype'), url('../../assets/fonts/SuisseBPIntl-Light.woff')
+  format('woff'), url('../../assets/fonts/SuisseBPIntl-Light.ttf')
+  format('truetype'), url('../../assets/fonts/SuisseBPIntl-Light.svg')
+  format('svg');
+}
+

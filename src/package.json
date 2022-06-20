@@ -1,0 +1,61 @@
+{
+  "name": "webpacktemplate",
+  "version": "1.0.0",
+  "description": "My template",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server --open --config ./build/webpack.dev.conf.js",
+    "build": "webpack --config ./build/webpack.build.conf.js"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 3 version"
+  ],
+  "author": "Siren Design",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "bugs": {
+    "url": ""
+  },
+  "keywords": [
+    "webpack",
+    "webpack4"
+  ],
+  "license": "ISC",
+  "dependencies": {
+    "@popperjs/core": "^2.10.2",
+    "aos": "^2.3.4",
+    "bootstrap": "^5.1.3",
+    "gh-pages": "^2.2.0",
+    "jquery": "^3.5.1",
+    "swiper": "^6.7.5",
+    "universal-parallax": "^1.3.2",
+    "vue": "^2.6.11"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.5",
+    "@babel/preset-env": "^7.10.4",
+    "autoprefixer": "^9.8.5",
+    "babel-loader": "^8.1.0",
+    "copy-webpack-plugin": "^6.0.3",
+    "css-loader": "^4.1.1",
+    "cssnano": "^4.1.10",
+    "file-loader": "^6.0.0",
+    "html-webpack-plugin": "^4.3.0",
+    "mini-css-extract-plugin": "^0.9.0",
+    "node-sass": "^4.14.1",
+    "postcss-loader": "^3.0.0",
+    "purgecss-webpack-plugin": "^4.0.3",
+    "sass-loader": "^9.0.2",
+    "style-loader": "^1.2.1",
+    "vue-loader": "^15.9.3",
+    "vue-style-loader": "^4.1.2",
+    "vue-template-compiler": "^2.6.11",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-merge": "^5.0.9"
+  }
+}

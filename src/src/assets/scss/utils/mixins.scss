@@ -1,0 +1,81 @@
+@mixin usm {
+  @media screen and (min-width: 412px) {
+    @content;
+  }
+}
+
+@mixin umd {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin ulg {
+  @media screen and (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin uxl {
+  @media screen and (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin uxxl {
+  @media screen and (min-width: 1600px) {
+    @content;
+  }
+}
+
+// ==========================================================================
+
+@mixin dsm {
+  @media screen and (min-width: 1px) and (max-width: 411px) {
+    @content;
+  }
+}
+
+@mixin dmd {
+  @media screen and (min-width: 1px) and (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin dlg {
+  @media screen and (min-width: 1px) and (max-width: 1023px) {
+    @content;
+  }
+}
+
+@mixin dxl {
+  @media screen and (min-width: 1px) and (max-width: 1279px) {
+    @content;
+  }
+}
+
+@mixin dxxl {
+  @media screen and (min-width: 1px) and (max-width: 1599px) {
+    @content;
+  }
+}
+
+// ==========================================================================
+
+@mixin olap {
+  @media screen and (min-width: 1100px) and (max-width: 1399px) {
+    @content;
+  }
+}
+
+@mixin ulap {
+  @media screen and (min-width: 1400px) {
+    @content;
+  }
+}
+
+@mixin dlap {
+  @media screen and (min-width: 1px) and (max-width: 1399px) {
+    @content;
+  }
+}
