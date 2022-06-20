@@ -94,7 +94,7 @@ ready(() => {
     var g_interval;
     var myFullpage = new fullpage('#fullpage', {
       autoScrolling:true,
-      anchors: ['firstPage', 'secondPage', 'thirdPage', 'fourthPage', 'fifthPage', 'sixthPage', 'seventhPage', 'eighthPage'],
+      anchors: ['firstPage', 'secondPage', 'thirdPage', 'fourthPage', 'fourthPage2', 'fourthPage3', 'fifthPage', 'sixthPage', 'seventhPage', 'eighthPage', 'footer'],
       // menu: '#myMenu',
       fadingEffect: 'slides',
       lockAnchors: true,
@@ -143,11 +143,11 @@ ready(() => {
     }
     });
     $('.LinkCon').on('click',function() {
-      fullpage_api.moveTo(6);
+      fullpage_api.moveTo(11);
       $('body').removeClass('FPOn');
     });
     $('.LinkPla').on('click',function() {
-      fullpage_api.moveTo(5);
+      fullpage_api.moveTo(7);
       $('body').removeClass('FPOn');
     });
     $('.LinkSpa').on('click',function() {
@@ -183,9 +183,11 @@ ready(() => {
     });
 
 
+
     $('.toggle2 a').click(function(e) {
       e.preventDefault();
       var $this = $(this);
+      var $newMap = $(this).attr('data-map');
       $this.toggleClass('show');
       if ($this.parent().parent().next().hasClass('show')) {
           $this.parent().parent().next().removeClass('show');
@@ -196,12 +198,58 @@ ready(() => {
           $this.parent().parent().next().slideUp(350);
           $this.parent().parent().next('.toggle2__target').toggleClass('show');
           $this.parent().parent().next().slideToggle(350);
+          $('.Map__bg').css('background-image', 'url(' + $newMap + ')' );
+          $('.Map__bg').hide().fadeIn(500);
       }
   });
 
 
 
+  $('.HasBg').each(function() {
+    $(this).on('click',function() {
+      $('.Floorplans__bgRow').show();
+      $('.PlanTrig').removeClass('Active');
+      $('.Floorplans__text').removeClass('Active');
+      $(this).addClass('Active');
+      let $newPlan = $(this).attr('data-bg');
+      let $newContent = $(this).attr('data-content');
+      $('.Floorplans__bg').css('background-image', 'url(' + $newPlan + ')' );
+      $($newContent).addClass('Active');
+    });
+  });
+  $('.HasSpec').each(function() {
+    $(this).on('click',function() {
+      $('.Floorplans__bgRow').hide();
+      $('.PlanTrig').removeClass('Active');
+      $('.Floorplans__text').removeClass('Active');
+      $(this).addClass('Active');
+      let $newContent = $(this).attr('data-content');
+      $($newContent).addClass('Active');
+    });
+  });
 
+  var swiper = new Swiper(".mySwiper", {
+    speed: 1700,
+    preloadImages: false,
+    lazy: true,
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+    on: {
+      transitionStart: function (e) {
+        $('.Spla4__text ').hide().fadeIn(500);
+      }
+      // transitionEnd: function (e) {
+      //   document.querySelectorAll('.Flr__inner').forEach(elem => {
+      //     elem.classList.remove('anim');
+      //   });
+      //   document.querySelectorAll('.Flr.selected .Flr__inner').forEach(elem => {
+      //     elem.classList.add('anim');
+      //   });
+      // }
+    }
+});
 
 
 
