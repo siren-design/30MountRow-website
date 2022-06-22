@@ -163,11 +163,13 @@ ready(() => {
         $(this).html('<span>+</span>&nbsp;&nbsp;Details').removeClass('Close');
         $(this).next('.Pop').removeClass('On');
         $('.S3__title').removeClass('z0');
+        $('body').removeClass('pop-open')
       }
       else {
         $(this).html('<span>+</span>&nbsp;&nbsp;Close').addClass('Close');
         $(this).next('.Pop').addClass('On');
         $('.S3__title').addClass('z0');
+        $('body').addClass('pop-open')
       }
     });
 
@@ -213,7 +215,12 @@ ready(() => {
       $(this).addClass('Active');
       let $newPlan = $(this).attr('data-bg');
       let $newContent = $(this).attr('data-content');
-      $('.Floorplans__bg').css('background-image', 'url(' + $newPlan + ')' );
+      $('.Floorplans__bg').fadeOut(500, function() {
+        //$('.Floorplans__bg').css('opacity', '0' );
+        $('.Floorplans__bg').css('background-image', 'url(' + $newPlan + ')' );
+        $('.Floorplans__bg').fadeIn(500);
+      });
+      
       $($newContent).addClass('Active');
     });
   });
