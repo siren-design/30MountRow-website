@@ -142,10 +142,10 @@ ready(() => {
         }
     }
     });
-    $('.LinkCon').on('click',function() {
+    /*$('.LinkCon').on('click',function() {
       fullpage_api.moveTo(11);
       $('body').removeClass('FPOn');
-    });
+    });*/
     $('.LinkPla').on('click',function() {
       fullpage_api.moveTo(7);
       $('body').removeClass('FPOn');
@@ -176,11 +176,26 @@ ready(() => {
     $('.LinkFlo').on('click',function() {
       if ($('body').hasClass('FPOn')) {
         $('body').removeClass('FPOn');
+        $('.LinkCon').addClass('On');
         $(this).html('Floorplans').removeClass('FPClose');
       }
       else {
         $('body').addClass('FPOn');
+        $('.LinkCon').removeClass('On');
         $(this).html('<span>+</span>&nbsp;&nbsp;Close').addClass('FPClose');
+      }
+    });
+    
+    $('.LinkCon').on('click',function() {
+      if ($('body').hasClass('ConOn')) {
+        $('body').removeClass('ConOn');
+        $('.LinkFlo').addClass('On');
+        $(this).html('Contact').removeClass('ConClose');
+      }
+      else {
+        $('body').addClass('ConOn');
+        $('.LinkFlo').removeClass('On');
+        $(this).html('<span>+</span>&nbsp;&nbsp;Close').addClass('ConClose');
       }
     });
 
@@ -207,9 +222,39 @@ ready(() => {
 
 
 
-  $('.HasBg').each(function() {
+  $('.PlanTrig').each(function() {
     $(this).on('click',function() {
-      $('.Floorplans__bgRow').show();
+    
+      $('.PlanTrig').removeClass('Active');
+      $(this).addClass('Active');
+      
+      let $newPlan = $(this).attr('data-bg');
+      let $newContent = $(this).attr('data-content');
+      $('.Floorplans__bg').fadeOut(500, function() {
+        $('.Floorplans__bg').css('background-image', 'url(' + $newPlan + ')' );
+        
+        $('.Floorplans__text').removeClass('Active');
+        
+        
+        if ($newPlan != null) {
+          $('.Floorplans__bg').fadeIn(500, function() {
+            $('.Floorplans__bgRow').show();
+            $($newContent).addClass('Active');
+          });
+        } else {
+          $('.Floorplans__bgRow').hide();
+          $($newContent).addClass('Active');
+          //$('.Floorplans__text').fadeIn(500);
+        }
+        /*$('.Floorplans__text').fadeOut(500, function() {
+          $('.Floorplans__text').removeClass('Active');
+          $($newContent).addClass('Active');
+          $('.Floorplans__text').fadeIn(500);
+        });*/
+        
+      });
+      
+      /*$('.Floorplans__bgRow').show();
       $('.PlanTrig').removeClass('Active');
       $('.Floorplans__text').removeClass('Active');
       $(this).addClass('Active');
@@ -221,10 +266,10 @@ ready(() => {
         $('.Floorplans__bg').fadeIn(500);
       });
       
-      $($newContent).addClass('Active');
+      $($newContent).addClass('Active');*/
     });
   });
-  $('.HasSpec').each(function() {
+  /*$('.HasSpec').each(function() {
     $(this).on('click',function() {
       $('.Floorplans__bgRow').hide();
       $('.PlanTrig').removeClass('Active');
@@ -233,7 +278,7 @@ ready(() => {
       let $newContent = $(this).attr('data-content');
       $($newContent).addClass('Active');
     });
-  });
+  });*/
 
   var swiper = new Swiper(".mySwiper", {
     speed: 1700,

@@ -132,6 +132,32 @@ a {
 .z0 {z-index: 0!important;}
 
 
+.cgi {
+  position: relative;
+  
+  &:before {
+    content:'Computer generated image. Indicative only.';
+    display:block;
+    color:#fff;
+    position:absolute;
+    bottom:20px;
+    left:20px;
+    z-index:500;
+    font-size:12px;
+    line-height:12px;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.75);
+  }
+  
+  &.Two:before {
+    left:auto;
+    right:20px;
+    text-align:right;
+  }
+  &.S2__bg2:before {
+    bottom:auto;
+    top:20px;
+  }
+}
 
 
 
@@ -600,14 +626,50 @@ a {
   display: none;
 }
 
+.ConOn {
+  background: $black;
+  .Logo1 {
+    opacity: 0;
+    pointer-events: none;
+  }
+  .Logo2 {
+    opacity: 1 !important;
+    pointer-events: all;
+  }
+  .LinkPla,
+  .LinkSpa,
+  .LinkFlo,
+  .LinkCon {
+    color: $primary;
+  }
+  
+  & .Footer {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  /*.Floorplans__bg {
+    transform: translateX(0);
+    //opacity:1;
+  }*/
+}
 
 .Footer {
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: $black;
+  transition: opacity .5s ease;
+  
   text-align: left;
   font-style: normal;
   background: $black;
   color: $white;
   overflow: hidden;
-  height: 50vh !important;
   // @include ulg {
   //   min-height: 100vh;
   // }
@@ -664,6 +726,9 @@ a {
   a {
     display: flex;
     margin-top: auto;
+    width:100%;
+    display:flex;
+    align-items: center;
   }
 }
 
@@ -866,6 +931,7 @@ a {
     opacity: 1;
   }
   .FPOn &,
+  .ConOn &,
   .Dark & {
     color: $primary;
   }
@@ -976,7 +1042,7 @@ a {
     //transition-delay: 1.1s;
   }
   span:nth-of-type(3) {
-    //transition-delay: 1s;
+    transition-delay: 1s;
   }
   span:last-of-type {
     //transition-delay: 1.1s;
@@ -992,15 +1058,25 @@ a {
     right:0;
     top:-50px;
   }
+  .fp-viewing-secondPage.Enter3 & span:nth-of-type(3) {
+    transition-delay: 0s;
+    right:-50px;
+    top:0;
+  }
+}
+
+.S1__imgholder {
+  height:50vh;
 }
 
 .S1__img {
   //transform: scaleX(0);
   //transform-origin: 0 50%;
+  transform:translateY(50px);
   transition: opacity 2.5s ease-out, transform 2.5s ease-out;
   transition-delay: $delay1;
   opacity: 0;
-  transform:translateY(10px);
+  //transform:translateY(10px);
   .fp-viewing-secondPage & {
     //transform: scaleX(1);
     opacity:1;
@@ -1009,7 +1085,7 @@ a {
   .fp-viewing-thirdPage & {
     //transform: scaleX(1);
     opacity:0;
-    //transform:translateY(-10px);
+    transform:translateY(-50px);
     transition-delay:0;
     transition-timing-function:ease-in;
   }
@@ -1031,7 +1107,7 @@ a {
   .fp-viewing-thirdPage & {
     //transform: scaleX(1);
     opacity:0;
-    transform:translateY(-45px);
+    transform:translateY(-25px);
     transition-delay:0.2s;
     transition-timing-function:ease-in;
   }
@@ -1506,6 +1582,7 @@ right: 0;
     transform: translateX(0);
     //opacity:1;
   }
+  
 }
 
 .Floorplans {
@@ -1524,7 +1601,8 @@ right: 0;
   padding: 70px 0 0;
   @include ulg {
     // padding: 150px;
-    padding: 150px 194px;
+    //padding: 150px 194px;
+    padding: 150px 40px 150px 194px;
   }
 }
 
@@ -1555,8 +1633,12 @@ right: 0;
   color: $tertiary;
   font-size: 1.2vw;
   font-weight: 300;
-  line-height: 30px;
+  line-height: 1.2em;
   margin-bottom: 0;
+}
+
+.plantextholder {
+  position:relative;
 }
 
 .Floorplans__text {
@@ -1564,9 +1646,12 @@ right: 0;
   font-size: 1.5vw;
   color: $tertiary;
   line-height: 1.3;
-  display: none !important;
+  position:absolute;
+  top:0;
+  left:0;
+  //display: none !important;
   opacity: 0;
-  transition: opacity.5s ease;
+  transition: opacity .5s ease;
   &.Active {
     display: flex !important;
     opacity: 1;
@@ -1709,7 +1794,7 @@ right: 0;
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 50%;
+  bottom:40px;
   transform: translate(-5%, -50%);
   font-size: 4.3vw;
   transition: all $headerduration ease-out;
