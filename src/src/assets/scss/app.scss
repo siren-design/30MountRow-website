@@ -136,26 +136,30 @@ a {
   position: relative;
   
   &:before {
-    content:'Computer generated image. Indicative only.';
-    display:block;
+    content:'CGI. Indicative only.';
+    display:inline-block;
+    padding:5px;
+    font-size:10px;
+    line-height:10px;
+    background:rgba(44,44,44,0.8);
     color:#fff;
     position:absolute;
-    bottom:20px;
-    left:20px;
+    bottom:0px;
+    left:0px;
     z-index:500;
     font-size:12px;
     line-height:12px;
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.75);
+    //text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.75);
   }
   
   &.Two:before {
     left:auto;
-    right:20px;
+    right:0px;
     text-align:right;
   }
   &.S2__bg2:before {
     bottom:auto;
-    top:20px;
+    top:0px;
   }
 }
 
@@ -898,6 +902,7 @@ a {
   opacity: 0;
   transition: opacity 1.4s ease;
   width: 121px;
+  cursor:pointer;
   @include ulg {
     top: 45px;
     left: 194px;
@@ -914,9 +919,10 @@ a {
 
 .Header__h1 {
   font-family: $mainFont;
-  position: fixed;
+  position: absolute;
   left: 90px;
   top: 17px;
+  z-index: 99999999;
   font-size: 22px;
   font-weight: 400;
   line-height: 28px;
@@ -1016,7 +1022,7 @@ a {
   font-size: 36px;
   line-height: 1.1;
   @include ulg {
-    font-size: 65px;
+    font-size: $bigheading1;
   }
 }
 
@@ -1284,7 +1290,7 @@ a {
   .fp-viewing-fourthPage & {
     transform: translateY(0);
     opacity:1;
-    transition-delay: 0;
+    transition-delay: 0s;
     transition-timing-function: ease-in;
   }
   .fp-viewing-fourthPage2 &,
@@ -1308,7 +1314,7 @@ a {
   .fp-viewing-fourthPage2 & {
     transform: translateY(0);
     opacity:1;
-    transition-delay: 0;
+    transition-delay: 0s;
     transition-timing-function: ease-in;
   }
   .fp-viewing-fourthPage3 & {
@@ -1331,9 +1337,14 @@ a {
   .fp-viewing-fourthPage3 & {
     transform: translateY(0);
     opacity:1;
-    transition-delay: 0;
+    transition-delay: 0s;
     transition-timing-function: ease-in;
   }
+}
+
+.floorheading {
+  position:relative;
+  z-index:1000;
 }
 
 .S3__title {
@@ -1349,10 +1360,10 @@ a {
   font-size: 4vw;
   //clip-path: inset(0 100% 0 0);
   transition: all $headerduration ease-out;
-  transition-delay: $delay1;
+  transition-delay: $delay2;
   z-index: 1;
   @include ulg {
-    font-size: 4.8vw;
+    font-size: $bigheading1;
   }
   .fp-viewing-fourthPage & {
     //clip-path: inset(0 0 0 100%);
@@ -1363,9 +1374,16 @@ a {
   .fp-viewing-fourthPage2 & {
     //clip-path: inset(0 0 0 100%);
     //clip-path: inset(0);
-    transition-delay: 0;
+    transition-delay: 0s;
     transition-timing-function: ease-in;
     transform: translateX(-50px);
+    opacity:0;
+  }
+  .pop-open & {
+    transition-delay: 0s;
+    transition-timing-function: ease-in;
+    transform: translateX(-50px);
+    transition-duration: 0.5s;
     opacity:0;
   }
 }
@@ -1383,9 +1401,16 @@ a {
     opacity:1;
   }
   .fp-viewing-fourthPage3 &{
-    transition-delay: 0;
+    transition-delay: 0s;
     transition-timing-function: ease-in;
     transform: translateX(50px);
+    opacity:0;
+  }
+  .pop-open & {
+    transition-delay: 0s;
+    transition-timing-function: ease-in;
+    transform: translateX(50px);
+    transition-duration: 0.5s;
     opacity:0;
   }
 }
@@ -1400,6 +1425,13 @@ a {
     transition-delay: 1.5s;
     transform: translateX(0);
     opacity:1;
+  }
+  .pop-open & {
+    transition-delay: 0s;
+    transition-timing-function: ease-in;
+    transform: translateX(-50px);
+    transition-duration: 0.5s;
+    opacity:0;
   }
 }
 
@@ -1523,13 +1555,13 @@ right: 0;
   font-weight: 400;
   margin-top: 15%;
   @include ulg {
-    font-size: 50px;
+    font-size: $bigheading1;
   }
 }
 
-.Pop__title {
+/*.Pop__title {
   font-size: 50px;
-}
+}*/
 
 .LinkFlo span {
   display: inline-block;
@@ -1699,6 +1731,10 @@ right: 0;
   height: 73vh;
 }
 
+.swiperholder {
+  position:relative;
+}
+
 .mySwiper {
   position: absolute;
   top: 0;
@@ -1713,12 +1749,25 @@ right: 0;
   }
 }
 
+.swiper-slide {
+  display:flex;
+  box-sizing: border-box;
+  padding-left:20px;
+}
+.swiper-pic {
+  height:100%;
+  flex:0 0 50%;
+}
+
 .SwiperControls {
   width: 90px;
   height: 30px;
   margin-top: 80px;
-  position: relative;
+  position: absolute;
+  z-index:1000;
   transform: rotateX(45deg);
+  bottom:0;
+  left:20px;
 }
 
 .swiper-button-prev,
@@ -1748,8 +1797,18 @@ right: 0;
   background: $secondary;
 }
 
+.locationgallery {
+  background: $secondary;
+  
+  & .SectionWrap {
+    left:174px;
+    max-width:calc(100vw - 174px);
+  }
+}
+
 .Spla4__bg {
-  background: url(../img/img_slide1.jpg) no-repeat center;
+  //background: url(../img/img_slide1.jpg) no-repeat center;
+  
   background-size: cover;
   transform: translateX(50px);
   transition: all $contentduration ease-out;
@@ -1777,7 +1836,7 @@ right: 0;
 }
 
 .Spla__bg2 {
-  background: url(../img/img_pla2.jpg) no-repeat center;
+  background: url(../img/img_pla2.jpg) no-repeat left center;
   background-size: cover;
   transform: translateX(-50px);
   transition: all $contentduration ease-out;
@@ -1795,8 +1854,9 @@ right: 0;
   flex-direction: column;
   position: absolute;
   bottom:40px;
+  right:40px;
   transform: translate(-5%, -50%);
-  font-size: 4.3vw;
+  //font-size: 4.3vw;
   transition: all $headerduration ease-out;
   transition-delay:$delay3;
   opacity:0;
@@ -1849,6 +1909,8 @@ right: 0;
 .Spla2__bg2 {
   transform: translateX(50px)!important;
   transition-delay: $delay2;
+  background: url(../img/img_pla3.jpg) no-repeat right center;
+  background-size:cover;
   .fp-viewing-sixthPage & {
     transform: translateX(0) !important;
     opacity:1;
@@ -1882,7 +1944,7 @@ right: 0;
   position: fixed;
   right: -15px;
   bottom: 0;
-  width: 35%;
+  width: 40%;
 }
 
 .Map__bg {
@@ -1901,7 +1963,7 @@ right: 0;
   transform: translateX(-25px) scale(1.1) !important;
   opacity:0;
   .fp-viewing-seventhPage & {
-    transition-delay: 0;
+    transition-delay: 0s;
     transform: translateX(0) scale(1.1) !important;
     opacity:1;
   }
@@ -1974,6 +2036,11 @@ right: 0;
 .RowHeight4 {
   height: calc(100% - 150px) !important;
 }
+
+/*section:not(.Spla4) {
+  display:none !important;
+  // remove class from main
+}*/
 
 .Spla4__text,
 .Spla4__title {

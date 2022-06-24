@@ -149,10 +149,17 @@ ready(() => {
     $('.LinkPla').on('click',function() {
       fullpage_api.moveTo(7);
       $('body').removeClass('FPOn');
+      $('body').removeClass('ConOn');
     });
     $('.LinkSpa').on('click',function() {
       fullpage_api.moveTo(2);
       $('body').removeClass('FPOn');
+      $('body').removeClass('ConOn');
+    });
+    $('.Logo').on('click',function() {
+      fullpage_api.moveTo(1);
+      $('body').removeClass('FPOn');
+      $('body').removeClass('ConOn');
     });
   }
 
@@ -163,13 +170,13 @@ ready(() => {
         $(this).html('<span>+</span>&nbsp;&nbsp;Details').removeClass('Close');
         $(this).next('.Pop').removeClass('On');
         $('.S3__title').removeClass('z0');
-        $('body').removeClass('pop-open')
+        $(this).parents(".SectionWrap").removeClass('pop-open')
       }
       else {
         $(this).html('<span>+</span>&nbsp;&nbsp;Close').addClass('Close');
         $(this).next('.Pop').addClass('On');
         $('.S3__title').addClass('z0');
-        $('body').addClass('pop-open')
+        $(this).parents(".SectionWrap").addClass('pop-open')
       }
     });
 
