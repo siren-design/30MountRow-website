@@ -230,19 +230,19 @@ ready(() => {
       $this.toggleClass('show');
       if ($this.parent().parent().next().hasClass('show')) {
           $this.parent().parent().next().removeClass('show');
-          $this.parent().parent().next().slideUp(350);
-          $('.Map__menuWrap').hide();
-          $('.Map__menuWrap').fadeIn(500);
+          $this.parent().parent().next().slideUp(450);
+          $this.parent().parent().next().find('div').css('opacity',0);
       } else {
           $('.toggle2__target').removeClass('show');
-          $('.toggle2__target').hide();
-          $this.parent().parent().next().slideUp(350);
+          // $('.toggle2__target').hide();
+          $('.toggle2__target').slideUp(250);
+          $('.toggle2__target div').css('opacity',0);
+          $this.parent().parent().next().slideUp(450);
           $this.parent().parent().next('.toggle2__target').toggleClass('show');
-          $this.parent().parent().next().slideToggle(350);
+          $this.parent().parent().next().slideToggle(450);
+          $this.parent().parent().next().find('div').css('opacity',1);
           $('.Map__bg').css('background-image', 'url(' + $newMap + ')' );
-          $('.Map__bg').hide().fadeIn(500);
-          $('.Map__menuWrap').hide();
-          $('.Map__menuWrap').fadeIn(500);
+          $('.Map__bg').hide().fadeIn(700);
       }
   });
 

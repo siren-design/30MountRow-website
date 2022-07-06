@@ -1619,6 +1619,7 @@ right: 0;
   font-size: 50px;
 }*/
 
+.LinkCon span,
 .LinkFlo span {
   display: inline-block;
   transform: rotate(45deg) translate(2px,-2px);
@@ -2107,7 +2108,7 @@ right: 0;
 }
 
 .Map__menuWrap {
-  transition: opacity 0.6 ease;
+  transition: opacity .6 ease;
 }
 
 .toggle2__target {
@@ -2115,9 +2116,19 @@ right: 0;
   line-height: 1.2;
   display: none;
   padding-bottom: 26px;
-  transition: opacity 0.6 ease;
-  &.show {
+  transition: opacity .5s ease;
+  // &.show {
+  &.shown {
     display: block;
+  }
+  &.show {
+    div {
+      opacity: 1;
+    }
+  }
+  div {
+    transition: opacity .5s ease;
+    opacity: 0;
   }
 }
 
@@ -2137,7 +2148,7 @@ right: 0;
 }*/
 
 .Spla4__text * {
-  transition: opacity .6s ease;
+  transition: opacity .5s ease;
 }
 
 .Spla4__text,
