@@ -103,7 +103,8 @@ ready(() => {
       loopHorizontal: true,
       slidesNavigation: true,
       slidesNavPosition: 'top',
-      scrollingSpeed: 1300,
+      scrollingSpeed: 1700,
+      // scrollingSpeed: 1300,
 
       css3: true,
       // easing: 'cubic-bezier(0.85, 0, 0.15, 1)',
@@ -192,7 +193,7 @@ ready(() => {
         $(this).html('<span>+</span>&nbsp;&nbsp;Close').addClass('FPClose');
       }
     });
-    
+
     $('.LinkCon').on('click',function() {
       if ($('body').hasClass('ConOn')) {
         $('body').removeClass('ConOn');
@@ -231,18 +232,18 @@ ready(() => {
 
   $('.PlanTrig').each(function() {
     $(this).on('click',function() {
-    
+
       $('.PlanTrig').removeClass('Active');
       $(this).addClass('Active');
-      
+
       let $newPlan = $(this).attr('data-bg');
       let $newContent = $(this).attr('data-content');
       $('.Floorplans__bg').fadeOut(500, function() {
         $('.Floorplans__bg').css('background-image', 'url(' + $newPlan + ')' );
-        
+
         $('.Floorplans__text').removeClass('Active');
-        
-        
+
+
         if ($newPlan != null) {
           $('.Floorplans__bg').fadeIn(500, function() {
             $('.Floorplans__bgRow').show();
@@ -258,9 +259,9 @@ ready(() => {
           $($newContent).addClass('Active');
           $('.Floorplans__text').fadeIn(500);
         });*/
-        
+
       });
-      
+
       /*$('.Floorplans__bgRow').show();
       $('.PlanTrig').removeClass('Active');
       $('.Floorplans__text').removeClass('Active');
@@ -272,7 +273,7 @@ ready(() => {
         $('.Floorplans__bg').css('background-image', 'url(' + $newPlan + ')' );
         $('.Floorplans__bg').fadeIn(500);
       });
-      
+
       $($newContent).addClass('Active');*/
     });
   });
@@ -291,13 +292,24 @@ ready(() => {
     speed: 1700,
     preloadImages: false,
     lazy: true,
+
+    effect: "fade",
+    fadeEffect: { crossFade: true },
+
     navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
     },
     on: {
+      transitionBeforeStart: function (e) {
+        // $('.Spla4__text p ').css('opacity',0);
+        // $('.Spla4__text h4 ').css('opacity',0);
+        // $('.Spla4__text h2 ').css('opacity',0);
+      },
       transitionStart: function (e) {
-        $('.Spla4__text ').hide().fadeIn(500);
+        // $('.swiper-slide-active .Spla4__text p ').css('opacity',1);
+        // $('.swiper-slide-active .Spla4__text h4 ').css('opacity',1);
+        // $('.swiper-slide-active .Spla4__text h2 ').css('opacity',1);
       }
       // transitionEnd: function (e) {
       //   document.querySelectorAll('.Flr__inner').forEach(elem => {
