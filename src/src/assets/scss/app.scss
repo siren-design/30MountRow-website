@@ -106,7 +106,8 @@ a {
   line-height: 20px;
   margin-bottom: 30px;
   @include ulg {
-    font-size: 1.42vw;
+    // font-size: 1.42vw;
+    font-size: 1.37vw;
     line-height: 1.3;
   }
 }
@@ -116,11 +117,14 @@ a {
   line-height: 20px;
   margin-bottom: 30px;
   @include ulg {
-    font-size: 1.16vw;
+    font-size: 1.19vw;
     line-height: 1.3;
   }
   @include olap {
     font-size: 1.08vw;
+  }
+  @media (min-width:1890px) {
+    font-size: 1.25vw;
   }
 }
 
@@ -729,8 +733,10 @@ a {
   .Misrep {
     font-size: 10px;
     line-height: 1.2;
+    margin-top: 29%;
     @include ulg {
       padding-right: 13%;
+      margin-top: 26%;
     }
   }
 }
@@ -1593,6 +1599,7 @@ right: 0;
 
 .Pop__title {
   font-size: 24px;
+  color: $tertiary!important;
   font-family: $mainFont2;
   margin-bottom: 35px;
   font-weight: 400;
@@ -1602,6 +1609,10 @@ right: 0;
     font-size: $bigheading2;
     line-height:1.1;
   }
+}
+
+.Pop__text {
+  color: $tertiary !important;
 }
 
 /*.Pop__title {
@@ -1965,8 +1976,11 @@ right: 0;
   transition-delay: $delay2;
   background: url(../img/img_pla3.jpg) no-repeat right center;
   background-size:cover;
+  @include ulg {
+    margin-right: -8%;
+  }
   .fp-viewing-sixthPage & {
-    transform: translateX(0) !important;
+    transform: translateX(10%) !important;
     opacity:1;
   }
 }
@@ -2001,6 +2015,16 @@ right: 0;
   width: 40%;
 }
 
+.swiper-pic img {
+  display: block;
+  transition: all 1s ease;
+  transform: translateX(20%);
+
+}
+.swiper-slide.swiper-slide-active .swiper-pic img  {
+  transform: translateX(0%);
+}
+
 .Map__bg {
   // background: url(../img/img_map1.png) no-repeat center 50px;
   // background: url(../img/img_map1.svg) no-repeat center 50px;
@@ -2024,6 +2048,12 @@ right: 0;
     transition-delay: 0s;
     transform: translateX(0) scale(1.1);
     opacity:1;
+    @media (min-width:1890px) {
+      transform: translateX(0) scale(1.13);
+    }
+  }
+  @media (min-width:1890px) {
+    background-position-x: -6px;
   }
 }
 
@@ -2076,11 +2106,16 @@ right: 0;
   }
 }
 
+.Map__menuWrap {
+  transition: opacity 0.6 ease;
+}
+
 .toggle2__target {
   font-size: 1.1vw;
   line-height: 1.2;
   display: none;
   padding-bottom: 26px;
+  transition: opacity 0.6 ease;
   &.show {
     display: block;
   }

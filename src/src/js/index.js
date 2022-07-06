@@ -151,16 +151,28 @@ ready(() => {
       fullpage_api.moveTo(7);
       $('body').removeClass('FPOn');
       $('body').removeClass('ConOn');
+      $('.LinkCon').html('Contact').removeClass('ConClose');
+      $('.LinkFlo').html('Floorplans').removeClass('FPClose');
+      $('.LinkCon').addClass('On');
+      $('.LinkFlo').addClass('On');
     });
     $('.LinkSpa').on('click',function() {
       fullpage_api.moveTo(2);
       $('body').removeClass('FPOn');
       $('body').removeClass('ConOn');
+      $('.LinkCon').html('Contact').removeClass('ConClose');
+      $('.LinkFlo').html('Floorplans').removeClass('FPClose');
+      $('.LinkCon').addClass('On');
+      $('.LinkFlo').addClass('On');
     });
     $('.Logo').on('click',function() {
       fullpage_api.moveTo(1);
       $('body').removeClass('FPOn');
       $('body').removeClass('ConOn');
+      $('.LinkCon').html('Contact').removeClass('ConClose');
+      $('.LinkFlo').html('Floorplans').removeClass('FPClose');
+      $('.LinkCon').addClass('On');
+      $('.LinkFlo').addClass('On');
     });
   }
 
@@ -186,8 +198,10 @@ ready(() => {
         $('body').removeClass('FPOn');
         $('.LinkCon').addClass('On');
         $(this).html('Floorplans').removeClass('FPClose');
+        $('body').removeClass('ConOn');
       }
       else {
+        $('body').removeClass('ConOn');
         $('body').addClass('FPOn');
         $('.LinkCon').removeClass('On');
         $(this).html('<span>+</span>&nbsp;&nbsp;Close').addClass('FPClose');
@@ -217,6 +231,8 @@ ready(() => {
       if ($this.parent().parent().next().hasClass('show')) {
           $this.parent().parent().next().removeClass('show');
           $this.parent().parent().next().slideUp(350);
+          $('.Map__menuWrap').hide();
+          $('.Map__menuWrap').fadeIn(500);
       } else {
           $('.toggle2__target').removeClass('show');
           $('.toggle2__target').hide();
@@ -225,6 +241,8 @@ ready(() => {
           $this.parent().parent().next().slideToggle(350);
           $('.Map__bg').css('background-image', 'url(' + $newMap + ')' );
           $('.Map__bg').hide().fadeIn(500);
+          $('.Map__menuWrap').hide();
+          $('.Map__menuWrap').fadeIn(500);
       }
   });
 
