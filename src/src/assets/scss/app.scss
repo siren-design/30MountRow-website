@@ -1104,7 +1104,7 @@ a {
 }
 
 .S1__imgholder {
-  height:50vh;
+  min-height:50vh;
 }
 
 .S1__img {
@@ -1185,6 +1185,10 @@ a {
 .Spla .SectionWrap {
   max-width: 100vw;
   width: 100vw;
+}
+
+.Bgt {
+  background: transparent !important;
 }
 
 .S2__bg1 {
@@ -1594,7 +1598,8 @@ right: 0;
   font-weight: 400;
   margin-top: 15%;
   @include ulg {
-    font-size: $bigheading1;
+    // font-size: $bigheading1;
+    font-size: $bigheading2;
     line-height:1.1;
   }
 }
