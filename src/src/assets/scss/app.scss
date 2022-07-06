@@ -2116,7 +2116,7 @@ right: 0;
   line-height: 1.2;
   display: none;
   padding-bottom: 26px;
-  transition: opacity .5s ease;
+  transition: opacity .35s ease;
   // &.show {
   &.shown {
     display: block;
@@ -2127,7 +2127,7 @@ right: 0;
     }
   }
   div {
-    transition: opacity .5s ease;
+    transition: opacity .35s ease;
     opacity: 0;
   }
 }
@@ -2148,7 +2148,7 @@ right: 0;
 }*/
 
 .Spla4__text * {
-  transition: opacity .5s ease;
+  transition: opacity .6s ease;
 }
 
 .Spla4__text,
