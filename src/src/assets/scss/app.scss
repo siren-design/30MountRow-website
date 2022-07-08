@@ -1525,7 +1525,9 @@ a {
   transition: all $headerduration ease-out;
   transition-delay: $delay2;
   z-index: 1;
+  padding-top: 10px;
   @include ulg {
+    padding-top: 0;
     font-size: 4vw;
     font-size: $bigheading1;
     line-height:1.1;
