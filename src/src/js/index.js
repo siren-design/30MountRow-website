@@ -151,6 +151,7 @@ ready(() => {
       fullpage_api.moveTo(7);
       $('body').removeClass('FPOn');
       $('body').removeClass('ConOn');
+      $('body').removeClass('NavOpen');
       $('.LinkCon').html('Contact').removeClass('ConClose');
       $('.LinkFlo').html('Floorplans').removeClass('FPClose');
       $('.LinkCon').addClass('On');
@@ -160,6 +161,7 @@ ready(() => {
       fullpage_api.moveTo(2);
       $('body').removeClass('FPOn');
       $('body').removeClass('ConOn');
+      $('body').removeClass('NavOpen');
       $('.LinkCon').html('Contact').removeClass('ConClose');
       $('.LinkFlo').html('Floorplans').removeClass('FPClose');
       $('.LinkCon').addClass('On');
@@ -169,6 +171,7 @@ ready(() => {
       fullpage_api.moveTo(1);
       $('body').removeClass('FPOn');
       $('body').removeClass('ConOn');
+      $('body').removeClass('NavOpen');
       $('.LinkCon').html('Contact').removeClass('ConClose');
       $('.LinkFlo').html('Floorplans').removeClass('FPClose');
       $('.LinkCon').addClass('On');
@@ -194,6 +197,7 @@ ready(() => {
     });
 
     $('.LinkFlo').on('click',function() {
+      $('body').removeClass('NavOpen');
       if ($('body').hasClass('FPOn')) {
         $('body').removeClass('FPOn');
         $('.LinkCon').addClass('On');
@@ -209,6 +213,7 @@ ready(() => {
     });
 
     $('.LinkCon').on('click',function() {
+      $('body').removeClass('NavOpen');
       if ($('body').hasClass('ConOn')) {
         $('body').removeClass('ConOn');
         $('.LinkFlo').addClass('On');
