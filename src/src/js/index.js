@@ -152,6 +152,7 @@ ready(() => {
       $('body').removeClass('FPOn');
       $('body').removeClass('ConOn');
       $('body').removeClass('NavOpen');
+      $('body').removeClass('PopOn');
       $('.LinkCon').html('Contact').removeClass('ConClose');
       $('.LinkFlo').html('Floorplans').removeClass('FPClose');
       $('.LinkCon').addClass('On');
@@ -162,6 +163,7 @@ ready(() => {
       $('body').removeClass('FPOn');
       $('body').removeClass('ConOn');
       $('body').removeClass('NavOpen');
+      $('body').removeClass('PopOn');
       $('.LinkCon').html('Contact').removeClass('ConClose');
       $('.LinkFlo').html('Floorplans').removeClass('FPClose');
       $('.LinkCon').addClass('On');
@@ -172,6 +174,7 @@ ready(() => {
       $('body').removeClass('FPOn');
       $('body').removeClass('ConOn');
       $('body').removeClass('NavOpen');
+      $('body').removeClass('PopOn');
       $('.LinkCon').html('Contact').removeClass('ConClose');
       $('.LinkFlo').html('Floorplans').removeClass('FPClose');
       $('.LinkCon').addClass('On');
@@ -185,14 +188,19 @@ ready(() => {
       if ($(this).hasClass('Close')) {
         $(this).html('<span>+</span>&nbsp;&nbsp;Details').removeClass('Close');
         $(this).next('.Pop').removeClass('On');
+        $('.LinkFlo').removeClass('On');
         $('.S3__title').removeClass('z0');
         $(this).parents(".SectionWrap").removeClass('pop-open')
+        $('body').removeClass('PopOn');
       }
       else {
         $(this).html('<span>+</span>&nbsp;&nbsp;Close').addClass('Close');
         $(this).next('.Pop').addClass('On');
+        $('.LinkFlo').removeClass('On');
         $('.S3__title').addClass('z0');
         $(this).parents(".SectionWrap").addClass('pop-open')
+        $('body').addClass('PopOn');
+        $(this).blur();
       }
     });
 
@@ -201,14 +209,16 @@ ready(() => {
       if ($('body').hasClass('FPOn')) {
         $('body').removeClass('FPOn');
         $('.LinkCon').addClass('On');
-        $(this).html('Floorplans').removeClass('FPClose');
+        // $(this).html('Floorplans').removeClass('FPClose');
+        $('.LinkFlo').html('Floorplans').removeClass('FPClose');
         $('body').removeClass('ConOn');
       }
       else {
         $('body').removeClass('ConOn');
         $('body').addClass('FPOn');
         $('.LinkCon').removeClass('On');
-        $(this).html('<span>+</span>&nbsp;&nbsp;Close').addClass('FPClose');
+        // $(this).html('<span>+</span>&nbsp;&nbsp;Close').addClass('FPClose');
+        $('.LinkFlo').html('<span>+</span>&nbsp;&nbsp;Close').addClass('FPClose');
       }
     });
 
