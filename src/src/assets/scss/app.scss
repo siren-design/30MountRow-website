@@ -162,8 +162,8 @@ a {
     @include dlg {
       top: 0;
       bottom: auto;
-      right: 0;
-      left: auto;
+      left: 0;
+      right: auto;
     }
     //text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.75);
   }
@@ -1344,6 +1344,12 @@ a {
   width: 100vw;
 }
 
+.Spla2 .SectionWrap {
+  @include dlg {
+    height: 100vh;
+  }
+}
+
 .Bgt {
   background: transparent !important;
 }
@@ -1717,15 +1723,20 @@ a {
   padding: 0 20px;
   line-height: 44px;
   height: 44px;
-  transition: color .5s ease, background-color .5s ease, opacity .5s ease;
+  // transition: color .5s ease, background-color .5s ease, opacity .5s ease;
+  transition: all .5s ease;
   cursor: pointer;
   z-index: 99999999999999;
+  @include dlg {
+    right: 0px !important;
+    left: auto !important;
+  }
   @include dlg {
     &.Close {
       background: transparent !important;
       right: -20px !important;
       left: auto !important;
-      top: 4px !important;
+      // top: 4px !important;
     }
   }
   &:hover {
@@ -1833,7 +1844,7 @@ a {
   color: $tertiary!important;
   font-family: $mainFont2;
   font-weight: 400;
-  margin-top: 40px;
+  margin-top: 36px;
   margin-bottom: 12px;
   @include ulg {
     // font-size: $bigheading1;
@@ -2074,7 +2085,7 @@ a {
 .SpecBg--m {
   width: 100%;
   position: relative;
-  height: 65vh;
+  height: 42vh;
   margin-top: 30px;
 }
 
@@ -2272,6 +2283,11 @@ a {
   background: url(../img/img_pla4.jpg) no-repeat center;
   background-size: cover;
   transition-delay: $delay1;
+  @include dlg {
+    width: 100vw;
+    height: 25vh;
+    margin-bottom: 30px;
+  }
   .fp-viewing-sixthPage & {
     transform: translateX(0) !important;
     opacity:1;
@@ -2286,9 +2302,18 @@ a {
   @include ulg {
     margin-right: -8%;
   }
+  @include dlg {
+    height: 20vh;
+    width: 50vw;
+    position: fixed;
+    bottom: 0;
+  }
   .fp-viewing-sixthPage & {
     transform: translateX(10%) !important;
     opacity:1;
+    @include dlg {
+      transform: translateX(-30%)!important;
+    }
   }
 }
 
@@ -2308,6 +2333,10 @@ a {
   transition-delay: $delay3;
   opacity:0;
   transform: translateY(50px);
+  @include dlg {
+    padding-right: 27vw !important;
+    padding-left: 35px !important;
+  }
   .fp-viewing-sixthPage & {
     //clip-path: inset(0);
     opacity:1;
@@ -2351,6 +2380,12 @@ a {
   @include ulg {
     background-position-x: -96px;
   }
+  @include dlg {
+    width: 100vw;
+    height: 57vh;
+    background-size: 125% auto;
+    background-position-y: bottom;
+  }
   .fp-viewing-seventhPage & {
     transition-delay: 0s;
     transform: translateX(0) scale(1.1);
@@ -2374,6 +2409,13 @@ a {
   padding-bottom: 100px;
   opacity:0;
   background: #deded4;
+  @include dlg {
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-bottom: 0;
+    height: calc(43vh - 80px);
+    overflow-y: scroll;
+  }
   .fp-viewing-seventhPage & {
     transform: translateX(0) !important;
     opacity:1;
@@ -2385,11 +2427,21 @@ a {
 
 .Map__title {
   // font-size: 30px;
-  font-size: 1.6vw;
+  font-size: 24px;
   font-weight: 400;
   line-height: 1.1;
   padding-left: 34px;
   position: relative;
+  overflow-y: scroll;
+  @include dlg {
+    margin-bottom: 8px;
+    p {
+      margin: 0;
+    }
+  }
+  @include ulg {
+    font-size: 1.6vw;
+  }
 }
 
 .Map__circle {
@@ -2418,11 +2470,14 @@ a {
 }
 
 .toggle2__target {
-  font-size: 1.1vw;
+  font-size: 16pxvw;
   line-height: 1.2;
   display: none;
   padding-bottom: 26px;
   transition: opacity .35s ease;
+  @include ulg {
+    font-size: 1.1vw;
+  }
   // &.show {
   &.shown {
     display: block;

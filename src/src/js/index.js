@@ -84,6 +84,8 @@ ready(() => {
 
   $('#MenuToggle').on('click',function() {
       $('body').toggleClass('NavOpen');
+      $('body').removeClass('FPOn');
+      $('.LinkFlo').html('Floorplans').removeClass('FPClose');
   });
 
 
