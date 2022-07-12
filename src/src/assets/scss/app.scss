@@ -168,11 +168,11 @@ a {
     //text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.75);
   }
 
-  &.Two:before {
-    left:auto;
-    right:0px;
-    text-align:right;
-  }
+  // &.Two:before {
+  //   left:auto;
+  //   right:0px;
+  //   text-align:right;
+  // }
   &.S2__bg2:before {
     bottom:auto;
     top:0px;
@@ -1270,6 +1270,7 @@ a {
     opacity:1;
     transform:translateY(0px);
   }
+  .fp-viewing-thirdPage2 &,
   .fp-viewing-thirdPage & {
     //transform: scaleX(1);
     opacity:0;
@@ -1294,6 +1295,7 @@ a {
     opacity:1;
     transform:translateY(0px);
   }
+  .fp-viewing-thirdPage2 &,
   .fp-viewing-thirdPage & {
     //transform: scaleX(1);
     opacity:0;
@@ -1354,6 +1356,12 @@ a {
   background: transparent !important;
 }
 
+.S2a {
+  @include dlg {
+    overflow: hidden;
+  }
+}
+
 .S2__bg1 {
   background: url(../img/img_s1a.jpg) no-repeat center;
   background-size: cover;
@@ -1366,6 +1374,7 @@ a {
   @include ulg {
     height: calc(50vh - 150px);
   }
+  .fp-viewing-thirdPage2 &,
   .fp-viewing-thirdPage & {
     transform: translateY(0);
     opacity:1;
@@ -1390,6 +1399,7 @@ a {
   opacity: 0;
   transform:translateY(25px);
   transition-delay: $delay2;
+  .fp-viewing-thirdPage2 &,
   .fp-viewing-thirdPage & {
     //clip-path: inset(0);
     opacity:1;
@@ -1416,6 +1426,7 @@ a {
   opacity: 0;
   transform:translateY(25px);
   transition-delay: $delay3;
+  .fp-viewing-thirdPage2 &,
   .fp-viewing-thirdPage & {
     //clip-path: inset(0);
     opacity:1;
@@ -1428,6 +1439,13 @@ a {
     transform:translateY(-100px);
     transition-timing-function:ease-in;
   }
+  .fp-viewing-thirdPage2 & {
+    @include dlg {
+      height: 100%;
+      min-height: 40vh;
+      justify-content: center;
+    }
+  }
 }
 
 .S2__bg2 {
@@ -1438,6 +1456,7 @@ a {
   transition: all $contentduration ease-out;
   transform-origin: 50% 100%;
   transition-delay: $delay4;
+  .fp-viewing-thirdPage2 &,
   .fp-viewing-thirdPage & {
     transform: translateY(0);
     opacity:1;
@@ -1447,6 +1466,13 @@ a {
     opacity:0;
     transition-delay: 0.4;
     transition-timing-function: ease-in;
+  }
+  // .fp-viewing-thirdPage2 & {
+  &.Two {
+    @include dlg {
+      height: 100%;
+      min-height: 49vh;
+    }
   }
 }
 
@@ -2110,11 +2136,24 @@ a {
 .swiper-slide {
   display:flex;
   box-sizing: border-box;
-  padding-left:20px;
+  @include ulg {
+    padding-left:20px;
+  }
 }
 .swiper-pic {
   height:100%;
-  flex:0 0 50%;
+  flex:0 0 100%;
+  @include ulg {
+    flex:0 0 50%;
+  }
+}
+
+.Spla4__text {
+  @include dlg {
+    width: 100%;
+    order: 2;
+    height: calc(50% - 108px);
+  }
 }
 
 .SwiperControls {
@@ -2125,7 +2164,15 @@ a {
   z-index:1000;
   transform: rotateX(45deg);
   bottom:0;
-  left:20px;
+  left: 0;
+  @include ulg {
+    left: 20px;
+  }
+  @include dlg {
+    margin-top: auto;
+    bottom: auto;
+    top: calc(47% + 46px);
+  }
 }
 
 .swiper-button-prev,
@@ -2139,6 +2186,13 @@ a {
 }
 .swiper-button-prev {
   left: 0;
+}
+
+.swiper-fade .swiper-slide {
+  @include dlg {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 
@@ -2159,8 +2213,10 @@ a {
   background: $secondary;
 
   & .SectionWrap {
-    left:174px;
-    max-width:calc(100vw - 174px);
+    @include ulg {
+      left:174px;
+      max-width:calc(100vw - 174px);
+    }
   }
 }
 
@@ -2171,11 +2227,13 @@ a {
   transform: translateX(50px);
   transition: all $contentduration ease-out;
   transition-delay: $delay1;
-  height: calc(100% - 150px);
   .fp-viewing-eighthPage &,
   .fp-viewing-footer & {
     transform: translateX(0);
     opacity:1;
+  }
+  @include ulg {
+    height: calc(100% - 150px);
   }
 }
 
@@ -2275,6 +2333,10 @@ a {
 
 .Spla2 .SectionWrap {
   padding: 150px 0;
+}
+
+.Spla4 .SectionWrap {
+  height: 100vh;
 }
 
 .Spla2__bg1 {
@@ -2518,7 +2580,10 @@ a {
 }
 
 .Spla4__title {
-  font-size: 3.6vw;
+  font-size: 8vw;
+  @include ulg {
+    font-size: 3.6vw;
+  }
 }
 
 .Spla4__h4 {
@@ -2527,9 +2592,16 @@ a {
   margin-bottom: 20px;
   display: block;
   margin-bottom: 28px !important;
+  @include dlg {
+    margin-bottom: 8px!important;
+    font-size: 16px;
+  }
 }
 
+
+
 .fp-viewing-secondPage .LinkSpa::after,
+.fp-viewing-thirdPage2 .LinkSpa::after,
 .fp-viewing-thirdPage .LinkSpa::after,
 .fp-viewing-fourthPage .LinkSpa::after,
 .fp-viewing-fourthPage2 .LinkSpa::after,
@@ -2594,6 +2666,19 @@ a {
 .fp-viewing-8 .Spla4 .fp-tableCell {
   opacity: 0;
 }
+.Spla4 .fp-tableCell {
+  opacity: 0;
+}
+.fp-viewing-eighthPage .Spla4 .fp-tableCell {
+  opacity: 1;
+}
+.Spla4 .swiper-pic {
+  @include dlg {
+    height: 47%;
+    display: flex;
+    flex: 0 0 50%;
+  }
+}
 
 .Spla4__text  {
   //clip-path: inset(0 100% 0 0);
@@ -2603,6 +2688,14 @@ a {
   transform: translateY(50px);
   margin-top: auto;
   margin-bottom: 42px;
+  @include dlg {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    p {
+      max-width: 75% !important;
+    }
+  }
   .fp-viewing-footer &,
   .fp-viewing-eighthPage & {
     //clip-path: inset(0);
@@ -2611,4 +2704,22 @@ a {
   }
 }
 
+.ScrollNow {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 30px;
+  letter-spacing: 3px;
+  font-size: 12px;
+  display: block;
+  opacity: 0;
+  transition: opacity 1s ease;
+  transition-delay: 1s;
+  @include ulg {
+    display: none !important;
+  }
+  .Enter4 & {
+    opacity: 1;
+  }
+}
 

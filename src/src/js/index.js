@@ -92,7 +92,62 @@ ready(() => {
 
   // Home
   //
-  if (document.getElementsByClassName('PageHome').length){
+  // if (document.getElementsByClassName('PageHome').length){
+  if ($(window).width() < 1024){
+    var g_interval;
+    var myFullpage = new fullpage('#fullpage', {
+      autoScrolling:true,
+      anchors: ['firstPage', 'secondPage', 'thirdPage', 'thirdPage2', 'fourthPage', 'fourthPage2', 'fourthPage3', 'fifthPage', 'sixthPage', 'seventhPage', 'eighthPage', 'footer'],
+      // menu: '#myMenu',
+      fadingEffect: 'slides',
+      lockAnchors: true,
+      dragAndMove:  true,
+      continuousHorizontal: true,
+      loopHorizontal: true,
+      slidesNavigation: true,
+      slidesNavPosition: 'top',
+      scrollingSpeed: 1700,
+      // scrollingSpeed: 1300,
+
+      css3: true,
+      // easing: 'cubic-bezier(0.85, 0, 0.15, 1)',
+      easingcss3: 'cubic-bezier(0.85, 0, 0.15, 1)',
+
+      afterLoad: function (origin, destination, direction) {
+        clearInterval(g_interval);
+        const lapse = 7000;
+        if(destination.item.querySelectorAll('.fp-slides').length){
+          g_interval = setInterval(function () {
+            fullpage_api.moveSlideRight();
+          }, lapse);
+        }
+      },
+      onLeave: function (origin, destination, direction) {
+        var loadedSection = this;
+        if(origin.index == 0 && direction =='down'){
+          // fullpage_api.setAllowScrolling(false);
+          // setTimeout(function(){
+          //   fullpage_api.setAllowScrolling(true);
+          // },3500);
+          $('.LinkFlo').addClass('On');
+          $('.LinkCon').addClass('On');
+        }
+        else if(origin.index == 1 && direction == 'up'){
+          $('.LinkFlo').removeClass('On');
+          $('.LinkCon').removeClass('On');
+        }
+        if(origin.index == 1 && direction =='down'){
+          // fullpage_api.setAllowScrolling(false);
+          // setTimeout(function(){
+          //   fullpage_api.setAllowScrolling(true);
+          // },3500);
+        }
+        else if(origin.index == 1 && direction == 'up'){
+        }
+    }
+    });
+  } else {
+    $('.S2.d-lg-none').remove();
     var g_interval;
     var myFullpage = new fullpage('#fullpage', {
       autoScrolling:true,
@@ -145,7 +200,8 @@ ready(() => {
         }
     }
     });
-    /*$('.LinkCon').on('click',function() {
+  }
+      /*$('.LinkCon').on('click',function() {
       fullpage_api.moveTo(11);
       $('body').removeClass('FPOn');
     });*/
@@ -182,7 +238,6 @@ ready(() => {
       $('.LinkCon').addClass('On');
       $('.LinkFlo').addClass('On');
     });
-  }
 
 
 
@@ -355,12 +410,7 @@ ready(() => {
       //   });
       // }
     }
-});
-
-
-
-
-
+  });
 
   // Section Animations - check if in view
   //
@@ -387,7 +437,6 @@ ready(() => {
   //     Check.classList.remove("InView");
   //   }
   // }, false);
-
 
 });
 //
