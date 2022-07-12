@@ -332,7 +332,7 @@ a {
   pointer-events: none;
   border-bottom: 0px solid transparent;
   border-bottom-width: 14vh;
-  height: calc(100vh - 171px);
+  height: calc(86vh - 171px);
   // height: calc(100vh - 170px);
   z-index: -1;
   opacity:0;
@@ -345,13 +345,13 @@ a {
     top: 50%;
     transform: translate(-50%,-50%);
   }
-  .Enter & {
-    //opacity:1;
-    //height: 84vh;
-    // top: 0;
-    //transform: translate(-50%,-50%) scale(1.38);
-    // transform: translate(-50%,-50%) scaleY(1.28);
-  }
+  // .Enter & {
+  //   opacity:1;
+  //   height: 84vh;
+  //   top: 0;
+  //   transform: translate(-50%,-50%) scale(1.38);
+  //   transform: translate(-50%,-50%) scaleY(1.28);
+  // }
   .Enter2 & {
     opacity:1;
     //height: calc(100vh - 170px);
@@ -1730,7 +1730,9 @@ a {
 .fp-viewing-seventhPage .LinkFlo,
 .fp-viewing-eighthPage .LinkFlo {
   opacity: 0;
-  pointer-events: none;
+  @include ulg {
+    pointer-events: none;
+  }
 }
 .fp-viewing-fifthPage .LinkFlo {
   opacity: 0;
@@ -2444,7 +2446,7 @@ a {
   }
   @include dlg {
     width: 100vw;
-    height: 57vh;
+    height: 53vh;
     background-size: 125% auto;
     background-position-y: bottom;
   }
@@ -2461,6 +2463,10 @@ a {
   }
 }
 
+.mb-15 {
+  margin-bottom: 15px !important;
+}
+
 .Map__menu {
   height: 100%;
   width: 100%;
@@ -2472,10 +2478,10 @@ a {
   opacity:0;
   background: #deded4;
   @include dlg {
-    padding-top: 20px;
+    padding-top: 12px;
     padding-left: 20px;
     padding-bottom: 0;
-    height: calc(43vh - 80px);
+    height: calc(48vh - 80px);
     overflow-y: scroll;
   }
   .fp-viewing-seventhPage & {
@@ -2494,8 +2500,8 @@ a {
   line-height: 1.1;
   padding-left: 34px;
   position: relative;
-  overflow-y: scroll;
   @include dlg {
+    overflow-y: scroll;
     margin-bottom: 8px;
     p {
       margin: 0;
@@ -2528,37 +2534,50 @@ a {
 }
 
 .Map__menuWrap {
-  transition: opacity .6 ease;
+  transition: opacity .6s ease;
 }
 
 .toggle2__target {
-  font-size: 16pxvw;
+  font-size: 13px;
   line-height: 1.2;
   display: none;
-  padding-bottom: 26px;
+  padding-bottom: 5px;
   transition: opacity .35s ease;
   @include ulg {
     font-size: 1.1vw;
+    padding-bottom: 26px;
   }
   // &.show {
   &.shown {
-    display: block;
+    display: flex;
+    @include ulg {
+      display: block;
+    }
   }
   &.show {
-    div {
+    >div {
       opacity: 1;
     }
   }
-  div {
+  >div {
     transition: opacity .35s ease;
-    opacity: 0;
+  }
+  >div div {
+    @include dlg {
+      // opacity: 0;
+      padding-right: 2px;
+      font-size: 10.7px;
+    }
   }
 }
 
 .toggle2__target span {
   display: inline-block;
-  width: 34px;
+  width: 18px;
   padding-left: 3px;
+  @include ulg {
+    width: 34px;
+  }
 }
 
 .RowHeight4 {
@@ -2708,7 +2727,7 @@ a {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  bottom: 30px;
+  bottom: 18px;
   letter-spacing: 3px;
   font-size: 12px;
   display: block;

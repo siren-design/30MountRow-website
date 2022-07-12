@@ -136,15 +136,26 @@ ready(() => {
           $('.LinkFlo').removeClass('On');
           $('.LinkCon').removeClass('On');
         }
-        if(origin.index == 1 && direction =='down'){
-          // fullpage_api.setAllowScrolling(false);
-          // setTimeout(function(){
-          //   fullpage_api.setAllowScrolling(true);
-          // },3500);
-        }
-        else if(origin.index == 1 && direction == 'up'){
-        }
+        // if(origin.index == 1 && direction =='down'){
+        //   fullpage_api.setAllowScrolling(false);
+        //   setTimeout(function(){
+        //     fullpage_api.setAllowScrolling(true);
+        //   },3500);
+        // }
+        // else if(origin.index == 1 && direction == 'up'){
+        // }
     }
+    });
+    $('.LinkPla').on('click',function() {
+      fullpage_api.moveTo(8);
+      $('body').removeClass('FPOn');
+      $('body').removeClass('ConOn');
+      $('body').removeClass('NavOpen');
+      $('body').removeClass('PopOn');
+      $('.LinkCon').html('Contact').removeClass('ConClose');
+      $('.LinkFlo').html('Floorplans').removeClass('FPClose');
+      $('.LinkCon').addClass('On');
+      $('.LinkFlo').addClass('On');
     });
   } else {
     $('.S2.d-lg-none').remove();
@@ -190,21 +201,16 @@ ready(() => {
           $('.LinkFlo').removeClass('On');
           $('.LinkCon').removeClass('On');
         }
-        if(origin.index == 1 && direction =='down'){
-          // fullpage_api.setAllowScrolling(false);
-          // setTimeout(function(){
-          //   fullpage_api.setAllowScrolling(true);
-          // },3500);
-        }
-        else if(origin.index == 1 && direction == 'up'){
-        }
+        // if(origin.index == 1 && direction =='down'){
+        //   fullpage_api.setAllowScrolling(false);
+        //   setTimeout(function(){
+        //     fullpage_api.setAllowScrolling(true);
+        //   },3500);
+        // }
+        // else if(origin.index == 1 && direction == 'up'){
+        // }
     }
     });
-  }
-      /*$('.LinkCon').on('click',function() {
-      fullpage_api.moveTo(11);
-      $('body').removeClass('FPOn');
-    });*/
     $('.LinkPla').on('click',function() {
       fullpage_api.moveTo(7);
       $('body').removeClass('FPOn');
@@ -216,6 +222,22 @@ ready(() => {
       $('.LinkCon').addClass('On');
       $('.LinkFlo').addClass('On');
     });
+  }
+      /*$('.LinkCon').on('click',function() {
+      fullpage_api.moveTo(11);
+      $('body').removeClass('FPOn');
+    });*/
+    // $('.LinkPla').on('click',function() {
+    //   fullpage_api.moveTo(7);
+    //   $('body').removeClass('FPOn');
+    //   $('body').removeClass('ConOn');
+    //   $('body').removeClass('NavOpen');
+    //   $('body').removeClass('PopOn');
+    //   $('.LinkCon').html('Contact').removeClass('ConClose');
+    //   $('.LinkFlo').html('Floorplans').removeClass('FPClose');
+    //   $('.LinkCon').addClass('On');
+    //   $('.LinkFlo').addClass('On');
+    // });
     $('.LinkSpa').on('click',function() {
       fullpage_api.moveTo(2);
       $('body').removeClass('FPOn');
